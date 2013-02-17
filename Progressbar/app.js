@@ -16,3 +16,20 @@
     window.Progress = Progress;
 
 }());
+
+function goProgress()
+{
+    var i=0;
+
+    var barra = new Progress('progress');
+
+    barra.status();
+
+    setInterval(function(){
+        if( i <= 100 ) {
+            barra.update(i);
+            console.log(i);
+        }
+        i = i + 5;
+    },1000);
+}
