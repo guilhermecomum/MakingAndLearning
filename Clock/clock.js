@@ -19,8 +19,16 @@ function clock() {
     ctx.stroke();
     ctx.restore();
 
-
     // Minutes pointer
+    ctx.save();
+    ctx.beginPath();
+    ctx.rotate((min * 6) * Math.PI/180);
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,-100);
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.restore();
 
     ctx.restore();
 }
