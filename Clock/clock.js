@@ -8,6 +8,8 @@ function clock() {
 
     var sec = now.getSeconds();
     var min = now.getMinutes();
+    var hr  = now.getHours();
+    hr = hr>=12 ? hr-12 : hr;
 
     // Seconds pointer
     ctx.save();
@@ -27,6 +29,17 @@ function clock() {
     ctx.lineTo(0,-100);
     ctx.strokeStyle = "#000000";
     ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.restore();
+
+    // Hour pointer
+    ctx.save();
+    ctx.beginPath();
+    ctx.rotate((hr * 30) * Math.PI/180);
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,-60);
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 6;
     ctx.stroke();
     ctx.restore();
 
