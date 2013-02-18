@@ -12,15 +12,14 @@ function clock() {
     // Seconds pointer
     ctx.save();
     ctx.beginPath();
-    ctx.rotate(sec * Math.PI/30);
+    ctx.rotate((sec * 6) * Math.PI/180);
     ctx.moveTo(0,0);
-    ctx.lineTo(60,120);
+    ctx.lineTo(120,0);
+    // ctx.moveTo(0,0);
+    // ctx.lineTo(83,0);
     ctx.strokeStyle = "#FF0000";
     ctx.stroke();
     ctx.restore();
-
-
-    // Minutes pointer
 
     ctx.restore();
 }
