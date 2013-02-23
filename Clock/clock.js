@@ -1,4 +1,6 @@
 
+setInterval(clock,1000);
+
 function clock() {
     var now = new Date();
     var ctx = document.getElementById('canvas').getContext('2d');
