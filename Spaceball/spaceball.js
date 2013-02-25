@@ -1,12 +1,24 @@
+var x = 400;
+var y = 300;
+var ctx = document.getElementById('canvas').getContext('2d');
 
-function ball() {
+function init() {
+    setInterval(draw,10);
+}
 
-    var ctx = document.getElementById('canvas').getContext('2d');
+function clear() {
+    ctx.clearRect(0, 0, 800, 600);
+}
+
+function ball(x,y) {
     ctx.beginPath();
-    ctx.arc(400,560,40,0,Math.PI*2,true);
+    ctx.arc(x,y,40,0,Math.PI*2,true);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.closePath();
+}
 
-
+function  draw() {
+    clear();
+    ball(x,y);
 }
