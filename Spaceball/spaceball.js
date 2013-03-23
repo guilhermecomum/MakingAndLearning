@@ -3,7 +3,7 @@ var y = 300;
 var ctx = document.getElementById('canvas').getContext('2d');
 
 function init() {
-    setInterval(draw,10);
+    draw();
 }
 
 function clear() {
@@ -21,4 +21,37 @@ function ball(x,y) {
 function  draw() {
     clear();
     ball(x,y);
+}
+
+
+document.onkeydown = function (e) {
+    var keyCode = e.KeyCode || e.which;
+    var arrow = {left: 37, up: 38, right: 39, down: 40 };
+
+    switch (keyCode) {
+
+        case arrow.left:
+        x--;
+        draw();
+        console.debug(keyCode);
+        break;
+
+        case arrow.right:
+        x++;
+        draw();
+        console.debug(keyCode);
+        break;
+
+        case arrow.up:
+        y--;
+        draw();
+        console.debug(keyCode);
+        break;
+
+        case arrow.down:
+        y++;
+        draw();
+        console.debug(keyCode);
+        break;
+    }
 }
